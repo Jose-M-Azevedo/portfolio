@@ -1,6 +1,7 @@
 import NavLink from "./NavLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import IconLink from "./IconLink";
 
 export default function MainHeader() {
   return (
@@ -14,22 +15,18 @@ export default function MainHeader() {
           </div>
 
           <div className="space-x-2 flex items-center">
-            <a
+            <IconLink
               href="https://github.com/Jose-M-Azevedo"
-              target="_blank"
-              rel="noopener noreferrer"
               className="hover:bg-[#141517] hover:text-white hover:rounded py-3 px-5"
             >
               <FontAwesomeIcon icon={faGithub} className="text-2xl" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/josé-maria-azevedoo/"
-              target="_blank"
-              rel="noopener noreferrer"
+            </IconLink>
+            <IconLink
+              href="https://www.linkedin.com/in/josé-azevedo-463892172/"
               className="hover:bg-[#141517] hover:text-white hover:rounded py-3 px-5"
             >
               <FontAwesomeIcon icon={faLinkedin} className="text-2xl" />
-            </a>
+            </IconLink>
           </div>
         </div>
       </nav>
