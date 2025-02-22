@@ -11,7 +11,7 @@ export default {
         background: "#1A1B1E",
         foreground: "#C1C2C5",
         customBorder: "#2C2E33",
-        secondaryColor: "#FFD43B",
+        secondaryColor: "#87CEEB",
         boxColor: "#25262B",
       },
     },
