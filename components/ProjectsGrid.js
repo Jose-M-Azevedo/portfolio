@@ -4,7 +4,7 @@ import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 export default function ProjectsGrid({ projects }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
       {projects.map((project) => (
         <div
           key={project.id}
@@ -33,7 +33,7 @@ export default function ProjectsGrid({ projects }) {
               )}
             </div>
           </div>
-          <p className="text-gray-300 mb-8">{project.description}</p>
+          <p className="text-foreground mb-8">{project.description}</p>
           <p className="text-sm text-gray-400">
             {project.techStack.map((tech, index) => (
               <span

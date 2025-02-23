@@ -1,9 +1,24 @@
+"use client";
+import { useState, useEffect } from "react";
 import NavLink from "./NavLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import IconLink from "./IconLink";
+import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 
 export default function MainHeader() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("light");
+    } else {
+      document.documentElement.classList.remove("light");
+    }
+  }, [darkMode]);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
     <header>
       <nav className="py-4 border-b border-customBorder">
@@ -15,18 +30,17 @@ export default function MainHeader() {
           </div>
 
           <div className="space-x-2 flex items-center">
-            <IconLink
-              href="https://github.com/Jose-M-Azevedo"
-              className="hover:bg-[#141517] hover:text-white hover:rounded py-3 px-5"
+            <button
+              onClick={toggleDarkMode}
+              className={`${
+                darkMode ? "hover:text-black" : "hover:text-white"
+              } py-3 px-5`}
             >
-              <FontAwesomeIcon icon={faGithub} className="text-2xl" />
-            </IconLink>
-            <IconLink
-              href="https://www.linkedin.com/in/josé-azevedo-463892172/"
-              className="hover:bg-[#141517] hover:text-white hover:rounded py-3 px-5"
-            >
-              <FontAwesomeIcon icon={faLinkedin} className="text-2xl" />
-            </IconLink>
+              <FontAwesomeIcon
+                icon={darkMode ? faSun : faMoon}
+                className="text-2xl"
+              />
+            </button>
           </div>
         </div>
       </nav>

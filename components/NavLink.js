@@ -13,7 +13,7 @@ export default function NavLink({ href, children }) {
         className={`font-bold py-2 px-3 ${
           isActive
             ? "bg-boxColor text-secondaryColor rounded"
-            : "hover:bg-[#141517] hover:text-secondaryColor hover:rounded"
+            : "hover:bg-customBorder hover:text-secondaryColor hover:rounded"
         }`}
       >
         {children}
