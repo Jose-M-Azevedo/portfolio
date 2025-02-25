@@ -3,9 +3,12 @@ import { useState, useEffect } from "react";
 import NavLink from "./NavLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+import LanguageToggle from "./LanguageToggle";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function MainHeader() {
   const [darkMode, setDarkMode] = useState(false);
+  const { language } = useLanguage();
 
   useEffect(() => {
     if (darkMode) {
@@ -24,9 +27,13 @@ export default function MainHeader() {
       <nav className="py-4 border-b border-customBorder">
         <div className="container mx-auto flex justify-between items-center max-w-[50%]">
           <div className="space-x text-base flex">
-            <NavLink href="/">Home</NavLink>
-            <NavLink href="/projects">Projects</NavLink>
-            <NavLink href="/about">About</NavLink>
+            <NavLink href="/">{language === "en" ? "Home" : "Início"}</NavLink>
+            <NavLink href="/projects">
+              {language === "en" ? "Projects" : "Projetos"}
+            </NavLink>
+            <NavLink href="/about">
+              {language === "en" ? "About" : "Sobre"}
+            </NavLink>
           </div>
 
           <div className="space-x-2 flex items-center">
@@ -41,6 +48,7 @@ export default function MainHeader() {
                 className="text-2xl"
               />
             </button>
+            <LanguageToggle />
           </div>
         </div>
       </nav>

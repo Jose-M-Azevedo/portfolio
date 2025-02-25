@@ -1,5 +1,6 @@
 import { getProjects } from "@/lib/projects";
 import ProjectsGrid from "@/components/ProjectsGrid";
+import ProjectsHeader from "@/components/ProjectsHeader";
 
 async function Projects() {
   const projects = await getProjects();
@@ -9,7 +10,7 @@ async function Projects() {
 export default function ProjectsPage() {
   return (
     <>
-      <h1 className="font-bold text-4xl mb-10">Projects</h1>
+      <ProjectsHeader />
       <Projects />
     </>
   );
